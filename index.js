@@ -3,7 +3,7 @@ var http = require('http');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var Datastore = require('nedb');
-var db = new Datastore({ filename: './daftar', autoload: true });
+var db = new Datastore({ filename: '~/daftar', autoload: true });
 
 var nodemailer = require('nodemailer');
 
