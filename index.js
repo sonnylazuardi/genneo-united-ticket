@@ -1,9 +1,11 @@
 var express = require('express');
 var http = require('http');
+var path = require('path');
 var cors = require('cors');
 var bodyParser = require('body-parser');
 var Datastore = require('nedb');
-var db = new Datastore({ filename: '~/daftar', autoload: true });
+const dirName = process.env.STORAGE_DIR || path.join(__dirname, 'storage');
+var db = new Datastore({ filename: path.join(dirName, 'daftar'), autoload: true });
 
 var nodemailer = require('nodemailer');
 
