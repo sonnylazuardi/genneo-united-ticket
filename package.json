@@ -1,0 +1,23 @@
+{
+  "name": "genneo-united",
+  "version": "0.0.1",
+  "description": "genneo united invitation",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "genneo",
+    "united"
+  ],
+  "author": "sonnylazuardi",
+  "license": "MIT",
+  "dependencies": {
+    "body-parser": "^1.15.2",
+    "cors": "^2.7.1",
+    "express": "^4.14.0",
+    "mailgun-js": "^0.7.11",
+    "nedb": "^1.8.0",
+    "nodemailer": "^2.4.2"
+  }
+}
