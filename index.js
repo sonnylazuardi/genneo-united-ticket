@@ -7,6 +7,9 @@ var Datastore = require('nedb');
 const dirName = process.env.STORAGE_DIR || path.join(__dirname, 'storage');
 var db = new Datastore({ filename: path.join(dirName, 'daftar'), autoload: true });
 
+console.log(process.env.SENDGRID_API_KEY);
+var sg = require('sendgrid').SendGrid(process.env.SENDGRID_API_KEY)
+
 // var nodemailer = require('nodemailer');
 
 // create reusable transporter object using the default SMTP transport
@@ -52,7 +55,7 @@ app.post('/daftar', function(req, res) {
         //     }
         //     console.log('Message sent: ' + info.response);
         // });
-        var sg = require('sendgrid').SendGrid(process.env.SENDGRID_API_KEY)
+        
         var requestBody = mail.toJSON()
         var request = sg.emptyRequest()
         request.method = 'POST'
