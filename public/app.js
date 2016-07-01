@@ -21,7 +21,7 @@ class App extends React.Component {
             .then((response) => {
                 if (response.data.success) {
                     alert('Berhasil mendaftar silakan cek email ' + data.email);
-                    this.setState({registered: true, email: data.email, idPendaftar: data.data._id});
+                    this.setState({registered: true, email: data.email, idPendaftar: response.data.data._id});
                 } else {
                     alert('Gagal mendaftar');
                     this.setState({registered: false});
