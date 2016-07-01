@@ -3,7 +3,8 @@ class App extends React.Component {
         super(props);
         this.state = {
             registered: false,
-            email: null
+            email: null,
+            idPendaftar: null
         };
     }
     onSubmit(e) {
@@ -20,7 +21,7 @@ class App extends React.Component {
             .then((response) => {
                 if (response.data.success) {
                     alert('Berhasil mendaftar silakan cek email ' + data.email);
-                    this.setState({registered: true, email: data.email});
+                    this.setState({registered: true, email: data.email, idPendaftar: data.data._id});
                 } else {
                     alert('Gagal mendaftar');
                     this.setState({registered: false});
@@ -64,6 +65,7 @@ class App extends React.Component {
                             : 
                             <div className="form">
                                 <h1>🐴 Terima kasih telah mendaftar</h1>
+                                <p>Simpan nomor pendaftaran ini <b>{this.state.idPendaftar}</b> atau</p> 
                                 <p>Silakan cek email 🐴 di {this.state.email}</p>
                             </div>}
                     </div>
