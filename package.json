@@ -18,6 +18,7 @@
     "express": "^4.14.0",
     "mailgun-js": "^0.7.11",
     "nedb": "^1.8.0",
-    "nodemailer": "^2.4.2"
+    "nodemailer": "^2.4.2",
+    "sendgrid": "^3.0.5"
   }
 }
